@@ -37,6 +37,28 @@ function MFAPage({ onBack }) {
     <>
       <style>
         {`
+          /* Hide scrollbars globally */
+          * {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+          }
+          
+          /* Hide scrollbars for WebKit browsers (Chrome, Safari, Edge) */
+          *::-webkit-scrollbar {
+            display: none;
+          }
+          
+          /* Hide scrollbars on body and html */
+          html, body {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            overflow-x: hidden;
+          }
+          
+          html::-webkit-scrollbar, body::-webkit-scrollbar {
+            display: none;
+          }
+          
           .chakra-tabs__tab[aria-selected="true"] .tab-svg {
             filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(86deg) brightness(94%) contrast(101%) !important;
           }
